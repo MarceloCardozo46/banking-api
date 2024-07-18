@@ -23,11 +23,11 @@ public class AccountMapper {
         return modelMapper.map(accountRequestDTO, Account.class);
     }
 
-    public AccountResponseDTO converToDTO(Account account){
+    public AccountResponseDTO convertToDTO(Account account){
         return modelMapper.map(account, AccountResponseDTO.class);
     }
 
-    public List<AccountResponseDTO> converToDTO(List<Account> accounts){
+    public List<AccountResponseDTO> convertToListDTO(List<Account> accounts){
         /* Mi intento (Probar si funciona después)
         List<AccountResponseDTO> listResponseDTO = new ArrayList<>();
         accounts.forEach(account ->{
@@ -36,7 +36,7 @@ public class AccountMapper {
         return listResponseDTO;
         */
         return accounts.stream()
-                .map(this::converToDTO)
+                .map(this::convertToDTO)
                 .toList();
     }
 }
